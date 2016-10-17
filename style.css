@@ -1,0 +1,12 @@
+/*pour la page d'accueil : */
+.jumbotron {
+	background-image: url("steam.jpg");
+}
+
+/*pour la page de contact : */
+#message {
+	border-radius: 5px;
+}
+
+
+
