@@ -13,7 +13,7 @@ require_once("includes/header.php");
 	Sujet de votre message : <br/>
 	<input type="text" name="subject"><br/>
 	Votre message : <br/>
-	<textarea form="contactform" rows="10" cols="50" name="message"></textarea>
+	<textarea form="contactform" rows="10" cols="50" name="message" id="message"></textarea>
 	<br/>
 	<input type="submit" name="send" value="Envoyer"><br/>
 </form>

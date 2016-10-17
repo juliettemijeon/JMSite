@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Steam and Sail</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/test/style/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!--<script src="script.js"></script>-->
 </head>
