@@ -28,8 +28,8 @@ $data = array(); 		// array pour la transmission des données
 		$data['success'] = false;
 		$data['errors']  = $errors;	
 	} else {
-		//lire un fichier de config /!\ ne pas le mettre en racine du site, plutôt éventuellement là ? 	/usr/local/etc/php/7.0/conf.d
-		//$ini=parse_ini_file('/Users/juliettemijeon/maconf.d/contact.ini');
+		//lire un fichier de config /!\ ne pas le mettre en racine du site
+		//$ini=parse_ini_file('/*********/contact.ini');
 		$mail = new PHPMailer(); // instancie un objet PHPMailer
 		//fonctionne : 
 		$mail->IsSMTP(); // définit SMTP comme protocole de communication
