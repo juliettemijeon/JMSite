@@ -3,9 +3,14 @@
 <head>
   <meta charset="utf-8">
   <title>Steam and Sail</title>
-  <link rel="stylesheet" href="/test/style/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <!--<script src="script.js"></script>-->
+  <link rel="stylesheet" href="/test/style/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script type="text/javascript" src="/test/app.js"></script>
+  <script type="text/javascript" src="/test/formController.js"></script>
+	<!--<script type="text/javascript" src="/test/formDirective.js"></script>-->
 </head>
 <header>
 </header>
@@ -20,7 +25,7 @@
 		</div>
 	<!--Navigation-->
 		<ul class="nav nav-tabs">
-		  <li role="presentation" class="active"><a href="index.php">Accueil</a></li>
+		  <li role="presentation"><a href="index.php">Accueil</a></li>
 		  <li role="presentation"><a href="#">About</a></li>
 		  <li role="presentation"><a href="contact.php">Contact</a></li>
 		</ul>
