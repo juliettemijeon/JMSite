@@ -34,7 +34,7 @@ app.controller('AboutController', function($scope){
 app.controller('ContactController', function($scope,$http){
     console.log('plop');
     $scope.formData = {};
-        $scope.processForm = function () {
+        $scope.processForm = function (isValid) {
             $http({
                 method: 'POST',
                 url: 'treatment.php',
@@ -43,7 +43,8 @@ app.controller('ContactController', function($scope,$http){
             })
                 .success(function (data) {
                     console.log(data);
-                    if (!data.success) {
+                    //if (!data.success) {
+                    if(!isValid){
                         $scope.errorName = data.errors.yourName;
                         $scope.errorEmail = data.errors.yourEmail;
                         $scope.errorContent = data.errors.content;
