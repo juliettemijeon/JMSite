@@ -1,5 +1,5 @@
 app.controller('FormController', function ($scope, $http){
-        $scope.formData = {};
+        /*$scope.formData = {};
         $scope.processForm = function () {
             $http({
                 method: 'POST',
@@ -19,7 +19,7 @@ app.controller('FormController', function ($scope, $http){
                     }
                 });
 
-        };
+        };*/
 
         
 });
