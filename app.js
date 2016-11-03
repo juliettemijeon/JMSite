@@ -27,12 +27,13 @@ app.controller('HomeController', function($scope){
 })
 
 app.controller('AboutController', function($scope){
-    console.log("salut ça farte");
     $scope.message='On en a gros!';
 })
 
 app.controller('ContactController', function($scope,$http){
-    console.log('plop');
+    $scope.enterName="Votre nom :";
+    $scope.enterEmail="Votre email :";
+    $scope.enterContent="Votre message :";
     $scope.formData = {};
         $scope.processForm = function (isValid) {
             $http({
@@ -47,7 +48,7 @@ app.controller('ContactController', function($scope,$http){
                     if(!isValid){
                         $scope.errorName = data.errors.yourName;
                         $scope.errorEmail = data.errors.yourEmail;
-                        $scope.errorContent = data.errors.content;
+                        $scope.errorContent = data.errors.yourContent;
                     } 
                     else {
                         $scope.message = data.message;

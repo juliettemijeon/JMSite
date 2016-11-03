@@ -18,8 +18,8 @@ $data = array(); 		// array pour la transmission des données
 	if (!empty($_POST['yourEmail']) && !filter_var($_POST['yourEmail'], FILTER_VALIDATE_EMAIL))//ne fonctionne que s'il y a 2 chaines de caractères de part et d'autre d'un @
 		$errors['yourEmail'] = 'Email invalide';
 
-	if (empty($_POST['content']))
-		$errors['content'] = 'Veuillez écrire un message';
+	if (empty($_POST['yourContent']))
+		$errors['yourContent'] = 'Veuillez écrire un message';
 
 // Réponse ===========================================================
 		// En cas d'erreurs : 
@@ -51,7 +51,7 @@ $data = array(); 		// array pour la transmission des données
 		$mail->Username = $ini['mail_username']; 
 		$mail->Password = $ini['mail_password'];*/ 
 		$mail->Subject = "Nouveau message de " . $_POST['yourName'] . ", e-mail: " .$_POST['yourEmail']. "";
-		$mail->Body = $_POST['content'];
+		$mail->Body = $_POST['yourContent'];
 		$mail->AddAddress("juliette.mijeon@gmail.com");
 		 if(!$mail->Send())
 		    {
