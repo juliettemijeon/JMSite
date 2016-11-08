@@ -1,4 +1,4 @@
-var app = angular.module('contactForm',['ngRoute']);
+var app = angular.module('contactForm',['ngRoute','ngMessages']);
 
 app.config(function($routeProvider){
     $routeProvider
@@ -54,6 +54,5 @@ app.controller('ContactController', function($scope,$http){
                         $scope.message = data.message;
                     }
                 });
-
         };
 })
