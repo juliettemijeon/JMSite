@@ -1,0 +1,6 @@
+[
+    {"minlengthError" : "Trop court !"},
+    {"maxlengthError" : "C'est beaucoup trop long !"},
+    {"requiredError" : "Ce champ est obligatoire."},
+    {"emailError" : "Email invalide !"}
+]

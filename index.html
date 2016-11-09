@@ -1,0 +1,48 @@
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Steam and Sail</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/test/style/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.4.7/angular-messages.min.js"></script>
+</head>
+<header>
+</header>
+<body ng-app="contactForm" ng-controller="HomeController">
+<!--Body-->
+<div class="container-fluid" id="wrapper">
+	<div class="col-md-1"></div>
+	<div class="col-md-10" id="contents">
+		<div class="jumbotron">
+	  		<h1>Un site sur le steampunk (ou pas)</h1>
+	  		<p>Site exercice pour continuer à pratiquer et ne pas complètement perdre la main</p>
+		</div>
+	<!--Navigation-->
+		<ul class="nav nav-tabs">
+		  <li role="presentation"><a href="#/">Accueil</a></li>
+		  <li role="presentation"><a href="#/about">About</a></li>
+		  <li role="presentation"><a href="#/contact">Contact</a></li>
+		</ul>
+		<div ng-view></div>
+		<script src="app.js"></script>
+	</div>
+<div class="col-md-1">
+</div>
+</body>
+<footer class="container-fluid" id="footer" ng-controller="FooterController">
+		
+			<div class="col-md-1">
+			</div>
+			<div class="col-md-10">
+				<p align="center">{{ footer }}</p>
+			</div>
+			<div class="col-md-1">
+			</div>
+		
+</footer>
+
+</html>
