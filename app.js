@@ -20,20 +20,66 @@ app.config(function($routeProvider){
     .otherwise({ redirectTo : '/' })
 })
 
-app.controller('HomeController', function($scope){
-    $scope.premier = 'Lorem Elsass ipsum adipiscing chambon Strasbourg météor leo amet Gal ! Huguette réchime Chulien amet Coopé de Truchtersheim leverwurscht sit hopla rossbolla barapli Richard Schirmeck purus leo Wurschtsalad munster elementum eleifend ftomi! jetz gehts los wie lacus suspendisse consectetur gewurztraminer Oberschaeffolsheim schnaps Pellentesque Heineken salu nullam DNA, sagittis flammekueche bissame elit tellus mänele kougelhopf sit ornare sed porta ac risus, vielmols, amet, Yo dû. geïz nüdle s\'guelt schneck knepfle quam. hop ch\'ai libero.';
-    $scope.deuxieme = 'Gal. Mauris mamsell ante eget id placerat quam, varius schpeck tellus baeckeoffe ornare tristique non non picon bière Pfourtz ! Oberschaeffolsheim kartoffelsalad pellentesque tchao bissame libero, turpis, Chulia Roberstau sit ac Kabinetpapier morbi blottkopf, libero, sed gravida dignissim Salut bisamme merci vielmols senectus Miss Dahlias mollis hopla rhoncus Spätzle habitant Salu bissame messti de Bischheim bredele vulputate Hans Carola in, dolor rucksack lotto-owe dui hopla Racing. Verdammi geht\'s et hoplageiss gal hopla id, Morbi knack so auctor, turpis ullamcorper semper und aliquam commodo Christkindelsmärik condimentum yeuh. wurscht kuglopf.';
+app.controller('HomeController', function($scope,$http){
 
+    $scope.url='/test/data/contents.json';
+    $scope.content = [];
+    
+    $scope.fetchContent = function() {
+    $http.get($scope.url).then(function(result){
+        $scope.content = result.data;
+    
+        $scope.premier = $scope.content[3].data;
+        $scope.deuxieme = $scope.content[4].data;
+    });
+    }
+    $scope.fetchContent();
 })
 
 app.controller('AboutController', function($scope){
     $scope.message='On en a gros!';
 })
 
+app.controller('FooterController', function($scope){
+    $scope.footer = '\u00a9 - J.MIJEON | 2016';
+})
+
 app.controller('ContactController', function($scope,$http){
-    $scope.enterName="Votre nom :";
+
+    /*Affichage des titres de champs du formulaire en allant les chercher dans un JSON :*/
+    $scope.url='/test/data/contents.json';
+    $scope.content = [];
+    
+    $scope.fetchContent = function() {
+    $http.get($scope.url).then(function(result){
+        $scope.content = result.data;
+    
+        $scope.enterName = $scope.content[0].data;
+        $scope.enterEmail = $scope.content[1].data;
+        $scope.enterContent = $scope.content[2].data;
+    });
+    }
+    $scope.fetchContent();
+    //Affichage des erreurs côté client : 
+    $scope.errorsUrl='/test/data/errors.json';
+    $scope.errors = [];
+    
+    $scope.fetchContent = function() {
+    $http.get($scope.errorsUrl).then(function(result){
+        $scope.errors = result.data;
+        $scope.minlengthError = $scope.errors[0].minlengthError;
+        $scope.maxlengthError = $scope.errors[1].maxlengthError;
+        $scope.requiredError = $scope.errors[2].requiredError;
+        $scope.emailError = $scope.errors[3].emailError;
+
+    });
+    }
+    $scope.fetchContent();
+    /* fin affichage JSON */
+
+    /*$scope.enterName="Votre nom :";
     $scope.enterEmail="Votre email :";
-    $scope.enterContent="Votre message :";
+    $scope.enterContent="Votre message :";*/
     $scope.formData = {};
         $scope.processForm = function (isValid) {
             $http({
